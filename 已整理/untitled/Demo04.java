@@ -41,7 +41,12 @@ public class Demo04 {
         //字符串的 ” + ”操作
         System.out.println("cjh"+"xrs");
         System.out.println("xrs"+666666);
-        
+        System.out.println(666666+"xrs");
+        //进行了拼接作用
+
+
+
+
 
 
 
