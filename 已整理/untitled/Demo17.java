@@ -32,8 +32,12 @@ public class Demo17 {
         {
             System.out.println("星期六");
         }
-        else{
+        else if(week==7)
+        {
             System.out.println("星期日");
+        }
+        else{
+            System.out.println("输入错误");
         }
 
 
