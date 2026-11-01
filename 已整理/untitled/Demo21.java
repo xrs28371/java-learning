@@ -36,10 +36,23 @@ public class Demo21 {
         int a=0; //个
         int b=0; //十
         int c=0; //百
+        int count=0;
         for(int i=100;i<=999;i++)
         {
-            if(i%10)
+             a=i%10;
+             b =i/10%10;
+             c=i%100;
+             if(a*a*a+b*b*b+c*c*c==i)
+             {
+                 System.out.println(i);
+                 count++;
+             }
         }
+        System.out.println(count);
+
+        //统计水仙花的个数
+        //如上 只是加了一个count 来计算水仙花的个数
+
 
     }
 }
