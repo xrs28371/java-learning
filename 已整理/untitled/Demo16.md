@@ -2,12 +2,14 @@
 
 > 文件名是随手取的，以下按代码实际内容总结。
 
-**主题：空类模板——尚未写入任何练习代码**
+**主题：输入模板——Scanner 骨架已搭好，正文尚未写**
 
-- 本文件只有一个空类 `Demo16`，类体里没有任何字段、方法（连 main 方法都没有），目前练不了任何知识点，推测是新建文件后还没开始写，或只是占位。
-- 唯一一行有效代码是首行的 `package PACKAGE_NAME;`，这是 IDEA 新建类时自动生成的默认包名占位符，不是用户自己写的包。
+- 相比上一版（只有空类 + 默认包名占位符），本版已补上 `public static void main(String[] args)`，并在文件首行引入 `import java.util.Scanner;`，显然是在为键盘输入练习搭骨架。
+- 但 main 方法体目前仍是空的：没有创建 Scanner 对象、没有 `nextInt()`/`nextLine()` 之类的读取调用、也没有输出，运行后什么都不做、不读任何输入。
+- 上一版的 `package PACKAGE_NAME;` 已去掉，当前文件无包声明，放在 src 根目录下编译运行无包目录问题。
 
 **笔试易错点**
 
-- 空类本身没有 main 方法，不能直接运行；要跑起来需先补 `public static void main(String[] args)`。
-- `package PACKAGE_NAME;` 不要原样保留：正式代码应改成真实包名或删掉该行。文件若放在 src 根目录却声明了包，编译/运行时会因包与目录不对应而找不到类。
+- `import java.util.Scanner;` 只是引入类，不等于已使用：当前代码并未真正用到 Scanner，编译能过（未使用的 import 只是警告、不报错），但考试若要求“键盘输入”必须补上 `Scanner sc = new Scanner(System.in);` 及读取语句，光 import 不得分。
+- 空 main 方法可以正常运行，只是无任何输出；别误以为“没报错 = 程序已完成输入逻辑”。
+- 后续补代码时注意 Scanner 的常见坑：`nextInt()` 后接 `nextLine()` 会吞掉换行导致读到空串；用完 Scanner 一般 `sc.close()`，但关闭后 System.in 也随之关闭。
