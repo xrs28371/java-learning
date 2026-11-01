@@ -41,7 +41,7 @@ public class Demo21 {
         {
              a=i%10;
              b =i/10%10;
-             c=i%100;
+             c=i/100;
              if(a*a*a+b*b*b+c*c*c==i)
              {
                  System.out.println(i);
