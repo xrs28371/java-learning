@@ -14,5 +14,6 @@ public class StudentDemo1 {
 
         s.study();
         s.doHomework();
+        s.show();
     }
 }

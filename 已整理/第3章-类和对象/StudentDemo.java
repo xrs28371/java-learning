@@ -12,6 +12,12 @@ public class StudentDemo {
    {
       System.out.println("Do Homework is called");
    }
+   public void show()
+   {
+      System.out.println(name+age);
+   }
+
+
 
 
 

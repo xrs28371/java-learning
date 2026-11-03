@@ -4,9 +4,11 @@
 - 对象的创建与使用（第3章-类和对象）：在 main 方法里用 `StudentDemo s = new StudentDemo();` 创建 StudentDemo 类的对象，再通过 `s.` 访问成员变量和成员方法。
 - 成员变量的读写：先打印未赋值的 `s.name`、`s.age`，再赋值（`s.name = "xrs"`、`s.age = 10`）后重新打印，验证赋值生效。
 - 成员方法的调用：`s.study()`、`s.doHomework()`，对象创建后必须显式调用方法才会执行方法体。
+- （本次更新新增）调用访问成员变量的方法：末尾新增 `s.show();`，调用的是 StudentDemo 里新加的 show()——方法内部直接打印该对象的 name + age，验证「方法里读到的就是这个对象的成员变量」。
 
 ## 关键结论
-- 运行顺序即代码顺序：创建对象 → 打印默认值 → 赋值 → 打印新值 → 调用 study → 调用 doHomework，最终输出依次为 `null0`、`xrs10`、`Study is called`、`Do Homework is called`。
+- 运行顺序即代码顺序：创建对象 → 打印默认值 → 赋值 → 打印新值 → 调用 study → 调用 doHomework → 调用 show，最终输出依次为 `null0`、`xrs10`、`Study is called`、`Do Homework is called`、`xrs10`。
+- （本次更新）末尾的 `xrs10` 来自 `s.show()`：此时对象已赋值 name="xrs"、age=10，所以 show() 打印的是赋值后的拼接结果；若把 show() 移到赋值前调用，输出就会变成 `null0`——调用时机决定输出，方法本身不固定。
 - 未赋值的成员变量有默认值：引用类型 `name` 默认 null，int 类型 `age` 默认 0，所以第一次打印的不是报错，而是 `null0`。
 - `s.name + s.age` 是字符串拼接而非数值相加：因为 `s.name` 是 String，`+` 会把后面的 `age` 也转成字符串拼上去——赋值前是 "null" + "0" = `null0`，赋值后是 "xrs" + "10" = `xrs10`。
 
