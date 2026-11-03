@@ -6,11 +6,12 @@ public class StudentDemo1 {
         StudentDemo s=new StudentDemo();
 
         //使用对象
-        System.out.println(s.name+s.age);
+        //System.out.println(s.name+s.age);
 
         s.name="xrs";
-        s.age=10;
-        System.out.println(s.name+s.age);
+        //s.age=10;//可能存在数据隐患
+        s.setAge(199);
+
 
         s.study();
         s.doHomework();
