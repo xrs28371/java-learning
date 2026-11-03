@@ -1,0 +1,19 @@
+# StudentDemo1 总结
+
+## 练的知识点
+- 对象的创建与使用（第3章-类和对象）：在 main 方法里用 `StudentDemo s = new StudentDemo();` 创建 StudentDemo 类的对象，再通过 `s.` 访问成员变量和成员方法。
+- 成员变量的读写：先打印未赋值的 `s.name`、`s.age`，再赋值（`s.name = "xrs"`、`s.age = 10`）后重新打印，验证赋值生效。
+- 成员方法的调用：`s.study()`、`s.doHomework()`，对象创建后必须显式调用方法才会执行方法体。
+
+## 关键结论
+- 运行顺序即代码顺序：创建对象 → 打印默认值 → 赋值 → 打印新值 → 调用 study → 调用 doHomework，最终输出依次为 `null0`、`xrs10`、`Study is called`、`Do Homework is called`。
+- 未赋值的成员变量有默认值：引用类型 `name` 默认 null，int 类型 `age` 默认 0，所以第一次打印的不是报错，而是 `null0`。
+- `s.name + s.age` 是字符串拼接而非数值相加：因为 `s.name` 是 String，`+` 会把后面的 `age` 也转成字符串拼上去——赋值前是 "null" + "0" = `null0`，赋值后是 "xrs" + "10" = `xrs10`。
+
+## 笔试易错点
+- ⚠️ 高频易错：`System.out.println(s.name + s.age)` 输出的不是「姓名和年龄两个值」，而是拼成的一个字符串。第一次输出 `null0`（null 与 0 连在一起、中间无空格）、第二次输出 `xrs10`，不要误写成 `null 0`、`xrs 10` 或算成数值和。
+- 成员变量默认值是高频考点：引用类型默认 null、int 默认 0；把「未赋值就打印」写成报错是错的，能编译能运行，只是输出默认值。
+- 对象使用三步缺一不可：创建（`new StudentDemo()`）→ 赋值/调用；只创建不调用方法，方法体永远不会执行。
+- `StudentDemo s = new StudentDemo();` 三段缺一不可：类型 `StudentDemo`、变量名 `s`、`new StudentDemo()`；漏 new 或漏括号都会编译报错。
+- 类名与文件名必须一致：StudentDemo1 类在 StudentDemo1.java 文件中，一个文件中只能有一个 public 类，考试手写代码时先对齐文件名。
+- 编译运行注意：StudentDemo1 依赖 StudentDemo 类，两个文件须放在同一目录（同一包）下一起编译，只拷一个文件会报「找不到符号 StudentDemo」。
