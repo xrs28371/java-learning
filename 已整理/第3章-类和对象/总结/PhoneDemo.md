@@ -16,3 +16,4 @@
 - `Phone p = new Phone();` 三段缺一不可：类型 `Phone`、变量名 `p`、`new Phone()`；写成 `Phone p = Phone();`（漏 new）或 `new Phone;`（漏括号）都会编译报错。
 - 类名与文件名必须一致：PhoneDemo 类在 PhoneDemo.java 文件中，Phone 类在 Phone.java 文件中；一个文件中只能有一个 public 类，且类名须与文件名相同，考试手写代码时先对齐文件名。
 - 编译运行注意：PhoneDemo 依赖 Phone 类，两个文件须放在同一目录（同一包）下一起编译，只拷一个文件会报「找不到符号 Phone」。
+- 格式细节不影响编译：当前版本里 `Phone p =new Phone();` 的 `=` 后少了一个空格，这只是书写格式问题，不影响编译和运行，笔试誊写时按规范空格写即可。

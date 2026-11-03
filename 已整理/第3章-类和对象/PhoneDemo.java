@@ -19,6 +19,6 @@ public class PhoneDemo {
         //成员方法
         p.call();
         p.sendMessage();
-        
+
     }
 }
