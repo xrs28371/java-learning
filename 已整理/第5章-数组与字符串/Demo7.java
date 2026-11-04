@@ -10,6 +10,9 @@ public class Demo7 {
 
         int arr[]={1,2,3};
 
+        String s=arry(arr);
+        System.out.println(s);
+
 
 
     }
@@ -21,8 +24,15 @@ public class Demo7 {
         {
             if(i==arr.length-1)
             {
-                
+                s+=arr[i];
+            }
+            else
+            {
+                s+=arr[i];
+                s+=",";
             }
         }
+        s+="]";
+        return s;
     }
 }
