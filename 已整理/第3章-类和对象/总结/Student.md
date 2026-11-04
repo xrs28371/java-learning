@@ -1,15 +1,20 @@
-# Student 总结
+# Student.java 总结（2026-11-04 下午更新版，untitled1 项目）
 
-## 练的知识点
-- 类的定义（第3章-类和对象）：用 `public class Student` 定义一个名为 Student 的类，类名与文件名 Student.java 一致。
-- 目前这份文件只是一个空骨架：外层 Student 类体里只嵌了一个同样名为 Student 的空内部类，没有成员变量、没有成员方法、也没有 main 方法，什么功能都还没写出来。
+## 这份代码在练什么
+独立的 Student 类，主练 **this 关键字**，顺带把封装补齐：name 和 age 都已改 private（昨晚 name 还没 private，今天这份补上了）。旧版的空骨架套娃问题已不存在。
 
-## 关键结论
-- 按这份代码的实际内容，它目前练的只是「写出一个类的外壳」，还没有练到成员变量、成员方法、对象创建这些第3章的核心内容。
-- 对照同章的 Phone / PhoneDemo 的写法，一个能用的学生类正常形态应该是：Student 类体里直接写成员变量（如姓名、年龄）和成员方法，而不是在类里再套一个同名类。
+## 关键内容
+- `setName(String name)` 里写 `this.name = name;`：形参和成员变量同名时，`this.name` 指成员变量，不带 this 的 `name` 指形参。用户自己的注释总结到位：「this 就是解决局部变量隐藏成员变量」。
+- `setAge(int age)` 同样用 `this.age = age;`。
+- 配了 `getName()`（返回 String）和 `show()`（打印 Name/Age）。
+- 注释口诀：set 改变变量、get 获取变量。
+
+## 与 StudentDemo.java 里那版的区别（重要）
+- StudentDemo.java 内的类：setAge 带 0–100 校验（超限打印 Invalid Age 不赋值），且配了 getAge()。
+- 本文件这版：setAge **没有校验**，且**没有 getAge()**（只有 getName）。
+- 笔试写封装题的标准答案形态是「private 字段 + 带校验的 set + 每个字段对应的 get」，以 StudentDemo.java 那版为准；本文件是 this 专题版，别把两版的细节记混。
 
 ## 笔试易错点
-- ⚠️ 结构异常，先核对再往下写：外层 Student 里嵌了一个同名内部类 `public class Student`，这种「类里套同名类」的写法非常不寻常，极可能是起稿时多套了一层。建议在 IDEA 里确认它能否编译、并把内层删掉、把成员直接写进外层 Student，否则后面加字段和方法时很容易写错位置。
-- 类名与文件名必须一致：Student 类在 Student.java 文件中，一个文件中只能有一个 public 类，考试手写代码时先对齐文件名。
-- 空类本身不报错、不输出：没有 main 方法就无法直接运行；想验证学生类，必须另写一个带 main 的测试类来创建 Student 对象并调用它。
-- 下一步补全方向：先定成员变量（姓名、年龄等）再写成员方法，最后用测试类创建对象、赋值、调用，复用 PhoneDemo 那套「创建 → 赋值 → 调用」的流程。
+1. 形参和成员变量同名时漏写 this → 变成形参给自己赋值，成员变量没变，编译还不报错、最难查。
+2. get 方法返回类型必须与字段类型一致（getName 返回 String，getAge 返回 int）。
+3. set 方法一般无返回值（void），靠参数传入新值。
