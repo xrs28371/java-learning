@@ -17,7 +17,7 @@ public class Demo8 {
 
         String s1=rev(line);
         System.out.println(s1);
-        
+
 
     }
     public static String rev(String s)
