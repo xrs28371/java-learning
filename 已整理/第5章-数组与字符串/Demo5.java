@@ -1,3 +1,4 @@
+import java.util.Scanner;
 public class Demo5 {
     public static void main(String[] args) {
         //遍历字符串
@@ -9,6 +10,19 @@ public class Demo5 {
         publicint length():返回此字符串的长度
         数组的长度:数组名.length
         字符串的长度:字符串对象.length0
-         */
+        */
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("请输入字符串：");
+        String line =sc.nextLine();
+
+        //获取长度
+        System.out.println(line.length());
+
+        //遍历
+        for(int i=0;i<line.length();i++)
+        {
+            System.out.println(line.charAt(i));
+        }
     }
 }
