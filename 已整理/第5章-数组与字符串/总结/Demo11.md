@@ -1,14 +1,15 @@
 # Demo11 总结
 
 ## 练的知识点
-- 占位骨架，尚未成题（第5章-数组与字符串）：按注释意图应是 String 与 StringBuilder 之间的相互转换，但当前版本只有空 `main` 方法和一句「相互转换」注释，没有任何可执行的转换代码。
+- String 与 StringBuilder 之间的相互转换（第5章-数组与字符串）：`StringBuilder` 转 `String` 用 `toString()`，`String` 转 `StringBuilder` 用构造方法 `new StringBuilder(字符串)`。
 
 ## 关键结论
-- 当前文件是刚建的空壳：类与 `main` 方法结构完整，但方法体内没有任何语句，运行时不输出任何内容、不产生任何转换结果。
-- 不能从这份代码推断它练的是哪种转换：到底是 `String` 转 `StringBuilder`（`new StringBuilder(str)`）、`StringBuilder` 转 `String`（`toString()`），还是两者互转，注释没有写清、代码也没有写出，须等下一版补上代码再定。
-- 与 Demo9、Demo10 的对照意义在于：它是本章 StringBuilder 小节的下一个待填坑位，出现即说明学习推进到了「相互转换」这一节，但内容尚未开始。
+- 本版已由上一版的空壳补成完整示例：`sb.append("hello")` 后，`String s = sb.toString();` 把 StringBuilder 的内容转成 String，输出 `hello`。
+- 反方向：`new StringBuilder(s)` 用已有字符串构造 StringBuilder；本例中 `sb1` 即由此得到（但注意第二次 `println` 打印的是 `s` 而不是 `sb1`，所以程序两次输出都是 `hello`）。
+- 代码里自己标注了错误写法：`String s = sb;` 是错的——StringBuilder 与 String 是不同类型，不能直接赋值，必须经过 `toString()` 转换。
 
 ## 笔试易错点
-- 不要把注释当成已实现的知识点：笔试复习时只以实际代码为准，这份当前版本答不出任何转换方法的用法，硬背「相互转换」四个字等于没复习。
-- 下一版若补代码，重点盯两处：`new StringBuilder(字符串)` 是构造转换，`sb.toString()` 是转回 String；两者方向不要写反，且 `toString()` 必须带括号。
-- 文件名 Demo11 没有含义：判断练什么只看代码内容，本版内容为空，结论就是「尚未开始写」，不要凭文件名或注释脑补出完整示例。
+- 方向不要写反：`toString()` 是 StringBuilder → String；`new StringBuilder(str)` 是 String → StringBuilder；笔试问「怎么把 StringBuilder 转成 String」要答 `toString()`，不要答构造方法。
+- `toString()` 必须带括号：注释里写的 `toString0` 是笔误（把括号写成了 0），照抄进代码会编译报错，正确写法是 `sb.toString()`。
+- `String s = sb;` 这类直接赋值在笔试改错题里是典型错误：两种类型之间没有自动转换，必须显式调用转换方法。
+- 文件名 Demo11 没有含义：判断练什么只看代码内容，本版内容就是两种转换，不要凭文件名脑补其他知识点。
