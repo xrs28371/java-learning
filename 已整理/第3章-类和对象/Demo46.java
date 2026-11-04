@@ -15,6 +15,8 @@ public class Demo46 {
         s2.age=30;
         System.out.println("Name:"+s2.name);
         System.out.println("Age:"+s2.age);
+        System.out.println("Name:"+s1.name);
+        System.out.println("Age:"+s1.age);
         s2.study();
         s2.doHomework();
 

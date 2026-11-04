@@ -14,6 +14,7 @@ public class Demo47 {
         a2.age=18;
         System.out.println("Name:"+a2.name);
         System.out.println("Age:"+a2.age);
+        System.out.println("Age:"+a1.age);
 
         //成员变量和局部变量
         //成员变量：类中方法外的变量
