@@ -7,6 +7,8 @@ public class StudentDemo1 {
         //使用set赋值
         s.setName("xrsxrs");
         s.setAge(23);
+        s.getName();
+        System.out.println(s.getName());
 
         //调用show方法
         s.show();

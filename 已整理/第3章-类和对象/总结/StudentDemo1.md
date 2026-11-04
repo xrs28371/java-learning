@@ -12,9 +12,9 @@ this 版 + 构造方法版 Student 类的测试类，本轮新增了带参构造
    - `Name : xrs`
    - `Age : 30`
 
-## 还差的一步
-- Student 里定义了 `getName()`，但这个测试类里**没有调用**它（只调了 show）。笔试若要求用 get 取值，要写成 `System.out.println(s.getName());` 才算演示完整。
-- 这版 Student 没有 getAge()，所以没法演示 getAge 调用；带校验 setAge＋getAge 的完整形态在 StudentDemo.java 里。
+## 还差的一步（2026-11-04 16:1x 已补一半）
+- getName 的演示已补：set 赋值之后先有一行光秃秃的 `s.getName();`（返回值被忽略，IDEA 报「结果已忽略」警告），紧接着补了 `System.out.println(s.getName());`，运行会打印 `xrsxrs`，这行才算有效演示；光秃秃那行建议删掉。
+- 这版 Student 仍没有 getAge()，没法演示 getAge 调用；带校验 setAge＋getAge 的完整形态在 StudentDemo.java 里。getAge 本体在 StudentDemo.java，不要记成在 Student.java。
 
 ## 笔试易错点
 1. 无参对象刚创建、还没 set 之前，String 字段默认 null、int 字段默认 0，show 出来就是 null/0，不是报错——别误以为对象没建成功。
