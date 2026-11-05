@@ -12,6 +12,6 @@ public class Demo19 {
         Zi5 z= new Zi5();
         z.call("xrs");
 
-        
+
     }
 }
