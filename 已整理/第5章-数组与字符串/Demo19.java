@@ -7,6 +7,11 @@ public class Demo19 {
 
         //创建对象，调用方法
         Fu5 f= new Fu5();
+        f.call("xrs");
+
+        Zi5 z= new Zi5();
+        z.call("xrs");
+
         
     }
 }
