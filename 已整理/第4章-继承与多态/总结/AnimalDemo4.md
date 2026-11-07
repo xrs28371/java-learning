@@ -1,6 +1,5 @@
 # AnimalDemo4.java 总结
 
-- 内容：一个只有空 `main` 方法的测试类：`public class AnimalDemo4`，`main(String[] args)` 方法体内没有任何代码。
-- 知识点：测试类/演示类的标准壳子。按命名规律（AnimalDemo → AnimalDemo3 都是用来演示 Animal 系列的），这个类应该是为 Animal4（抽象类）准备的演示入口，后续会在 `main` 里写测试代码，比如创建 Animal4 的子类对象并调用 `eat()` 来验证多态。
-- 易错点：现在 main 方法是空的，运行后什么都不输出，不代表代码有错，只是还没写测试逻辑；笔试手写 main 方法注意签名必须一字不差：`public static void main(String[] args)`，少了 static、写错 String[] 都会导致“找不到 main 方法”。等后续往 main 里加代码时再补总结。
-
+- 内容：抽象类 Animal4 的演示类。`main` 方法里：`//Animal4 a = new Animal4();` 被注释掉（附注释「如何创建对象」）；实际代码 `Animal4 a = new Cat4();`，然后 `a.eat();`、`a.sleep();`，附注释「抽象类要通过子类来访问」「子类要么重写抽象方法，要么也是抽象类」。
+- 知识点：抽象类的使用方式 + 多态。① 抽象类不能直接 `new`，必须通过子类对象来用：`Animal4 a = new Cat4();` 是父类引用指向子类对象（多态），`a.eat()` 实际执行的是 Cat4 重写的 `eat()`（输出 "cat eat fish"），`a.sleep()` 执行的是父类 Animal4 的普通方法。② 子类继承抽象类后，要么重写全部抽象方法（Cat4 就是这样），要么自己也声明为抽象类。
+- 易错点：笔试高频点——`new Animal4()` 编译报错是抽象类最常考的点；多态调用时，父类引用只能调父类里有的方法（`a.eat()`、`a.sleep()` 都在 Animal4 里声明过所以能调），子类独有的方法用父类引用调不到；`@Override` 写在重写方法上可让编译器帮你检查签名有没有写错。
