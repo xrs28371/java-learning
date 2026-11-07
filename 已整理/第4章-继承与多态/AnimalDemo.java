@@ -10,5 +10,12 @@ public class AnimalDemo {
     public static void main(String[] args) {
         //有父类引用指向子类对象
         Animal a =new Cat();
+
+        System.out.println(a.age);//40  通过多态是访问父类 编译运行都要看左边
+      //  System.out.println(a.weight);  父类里面没有weight
+
+        a.eat();// 输出子类的方法  多态下 编译看左边 运行看右边
+        // a.palygame  一样都看左边 左边没有就报错
+        //成员方法有重写 成员变量没有
     }
 }
