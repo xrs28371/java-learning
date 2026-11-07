@@ -22,6 +22,9 @@ public class AnimalDemo2 {
          */
 
         //向下转型
-        (Cat2)a
+        Cat2 c=(Cat2)a;
+        c.eat();
+        c.palygame();
+        //这样就可以访问子类的特有功能
     }
 }
