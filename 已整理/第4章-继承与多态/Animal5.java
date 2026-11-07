@@ -3,8 +3,12 @@ public abstract class Animal5 {
     private final  String name="xrs";
 
     public Animal5() {
-        
+
     }
+    public Animal5(int age) {
+        this.age=age;
+    }
+    //也能存在构造方法 用于子类访问父类的初始化
 
     public void show(){
         age=40;
