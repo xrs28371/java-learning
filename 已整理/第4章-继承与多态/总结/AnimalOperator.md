@@ -1,0 +1,7 @@
+# AnimalOperator.java 总结
+
+- 内容：测试类（本轮新建，2026-11-08）。main 里两步验证多态：① `a.useAnimal(c)`——把 `Cat1` 对象 c 传给形参类型为 `Animal` 的方法，输出 "cat1"；② `Animal a1 = a.getAnimal(); a1.eat();`——接收父类类型返回值（实际是 Cat1 对象），再调 `eat()`，同样输出 "cat1"。注释「通过多态来写的」点明了意图。
+- 知识点：多态作参数＋多态作返回值的完整调用链：传进去的是子类、拿回来的是父类引用、执行的都是子类重写的方法。这是第 4 章「抽象类＋多态」编程原型的收尾文件，与 Animal.java（抽象父类）、Cat1.java（实现抽象方法）、AnimalDemo.java（工具类）配套。
+- 易错点：文件名是正确拼写 `AnimalOperator`，同目录下还有旧文件 `AnimalOperater.java`（Operater 少了 o，是拼写错误的版本），两个不是同一个文件，别混淆；`a1.eat()` 输出 "cat1"——`getAnimal()` 里 new 的是 `Cat1`，不是注释里写的 `Cat`，以代码为准。
+
+- 备注：本文件新建于 2026-11-08，与同日改写的 Animal.java、Cat1.java、AnimalDemo.java 是一套。
