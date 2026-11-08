@@ -10,5 +10,8 @@ public class InnerDemo {
          */
 
         //如果是private 内容呢
+
+        Outer1 o =new Outer1();
+        o.method();
     }
 }
