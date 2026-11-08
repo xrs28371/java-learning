@@ -1,8 +1,6 @@
-public class Cat2 extends Animal2 {
-    public  void eat() {
-        System.out.println("eat");
-    }
-    public void palygame(){
-        System.out.println("palygame");
+public class Cat2 implements  Jumpping{
+    @Override
+    public void jump() {
+        System.out.println("Jumping Cat2");
     }
 }
